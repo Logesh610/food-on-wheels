@@ -1,0 +1,16 @@
+package com.foodonwheels.backend.repository;
+
+import com.foodonwheels.backend.model.Restaurant;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface RestaurantRepository extends JpaRepository<Restaurant, Long> {
+    List<Restaurant> findByFeaturedTrue();
+    
+    @Query("SELECT DISTINCT r.category FROM Restaurant r")
+    List<String> findDistinctCategories();
+}
