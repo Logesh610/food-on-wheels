@@ -37,4 +37,18 @@ public class RestaurantController {
     public List<String> getCategories() {
         return restaurantRepository.findDistinctCategories();
     }
+
+    @GetMapping("/search")
+    public List<Restaurant> search(@RequestParam String query) {
+        return restaurantRepository.searchRestaurants(query);
+    }
+
+    @GetMapping("/filter")
+    public List<Restaurant> filter(
+            @RequestParam(required = false) Boolean isVeg,
+            @RequestParam(required = false) Double rating,
+            @RequestParam(required = false) String cuisine,
+            @RequestParam(required = false) Integer priceRange) {
+        return restaurantRepository.filterRestaurants(isVeg, rating, cuisine, priceRange);
+    }
 }

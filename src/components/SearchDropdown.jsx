@@ -76,7 +76,7 @@ const SearchDropdown = ({ isOpen, results, query, isLoading, onClose }) => {
             <div className="border-t border-slate-100 dark:border-slate-800 pt-6 text-left">
               <h4 className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-4 px-2">Try these instead</h4>
               <div className="flex flex-wrap gap-2">
-                {['Burgers', 'Pizza', 'Butter Chicken', 'Sushi', 'Desserts', 'Biryani'].map(item => (
+                {['Burgers', 'Pizza', 'Butter Chicken', 'Sushi', 'Desserts', 'Biriyani'].map(item => (
                   <button
                     key={item}
                     onClick={() => handleResultClick('r1')} // Generic redirection for demonstration
